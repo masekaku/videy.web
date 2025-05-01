@@ -3,30 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player with Pop-up Ad</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Responsive Video Player with Pop-up Ad</title>
+    <!-- Link ke file CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="video-container">
-        <video id="videoPlayer" controls>
-            <source src="video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <div class="container">
+        <!-- Video Player -->
+        <div class="video-wrapper">
+            <!-- Menggunakan iframe -->
+            <iframe 
+                id="videoPlayer" 
+                src="https://cdn.videy.co/T59Hdv991" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Pop-up Ad -->
+        <div id="popupAd" class="popup-ad">
+            <iframe
+                id="adFrame"
+                src="https://incredibleenhancementslightning.com/qqumqvsjc?key=2ae095dee8d04ef97af9cb410fbb38fe"
+                frameborder="0"
+                loading="lazy"
+                onload="startCountdown()">
+            </iframe>
+            <div id="countdown" class="countdown">15</div>
+            <button id="closeAdBtn" class="close-btn">✕</button>
+        </div>
     </div>
 
-    <!-- Pop-up Ad Overlay -->
-    <div id="popupAd" class="popup-ad">
-        <iframe
-            id="adFrame"
-            src="https://incredibleenhancementslightning.com/qqumqvsjc?key=2ae095dee8d04ef97af9cb410fbb38fe"
-            frameborder="0"
-            loading="lazy"
-            onload="startCountdown()">
-        </iframe>
-        <div id="countdown" class="countdown">15</div>
-        <button id="closeAdBtn" class="close-btn">Close</button>
-    </div>
-
-    <script src="script.js"></script>
+    <!-- Link ke file JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
