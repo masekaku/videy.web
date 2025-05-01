@@ -2,38 +2,31 @@ const video = document.getElementById('videoPlayer');
 const popupAd = document.getElementById('popupAd');
 const closeAdBtn = document.getElementById('closeAdBtn');
 const countdown = document.getElementById('countdown');
-const adFrame = document.getElementById('adFrame');
-
 let countdownInterval;
 
-// Show pop-up ad when play is clicked
-video.addEventListener('play', () => {
-    // Pause the video
-    video.pause();
-
-    // Display the pop-up ad
+// Event untuk memulai iklan pop-up
+video.addEventListener('load', () => {
+    // Pause video dan tampilkan iklan pop-up
     popupAd.style.display = 'flex';
-    closeAdBtn.style.visibility = 'hidden'; // Hide close button initially
+    closeAdBtn.style.visibility = 'hidden'; // Sembunyikan tombol close
     countdown.textContent = '15'; // Reset countdown
 });
 
-// Start countdown when ad is fully loaded
+// Fungsi untuk memulai countdown
 function startCountdown() {
     let timeLeft = 15;
 
-    // Ensure countdown starts only if iframe is loaded
     countdownInterval = setInterval(() => {
         if (timeLeft > 0) {
             countdown.textContent = --timeLeft;
         } else {
             clearInterval(countdownInterval);
-            closeAdBtn.style.visibility = 'visible'; // Show close button
+            closeAdBtn.style.visibility = 'visible'; // Tampilkan tombol close
         }
     }, 1000);
 }
 
-// Close the pop-up ad
+// Fungsi untuk menutup pop-up
 closeAdBtn.addEventListener('click', () => {
     popupAd.style.display = 'none';
-    video.play(); // Resume the video
 });
