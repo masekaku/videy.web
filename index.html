@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player with Pop-up Ad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="video-container">
+        <video id="videoPlayer" controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Pop-up Ad Overlay -->
+    <div id="popupAd" class="popup-ad">
+        <iframe
+            id="adFrame"
+            src="https://incredibleenhancementslightning.com/qqumqvsjc?key=2ae095dee8d04ef97af9cb410fbb38fe"
+            frameborder="0"
+            loading="lazy"
+            onload="startCountdown()">
+        </iframe>
+        <div id="countdown" class="countdown">15</div>
+        <button id="closeAdBtn" class="close-btn">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
